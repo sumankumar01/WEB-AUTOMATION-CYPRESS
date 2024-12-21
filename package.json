@@ -9,6 +9,31 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.16.0"
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "cypress": "^13.16.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-xpath": "^2.0.1"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^21.0.3"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/**/*.{js,ts}",
+      "cypress/e2e/*.{js,ts}",
+      "cypress/support/step_definitions/**/*.{js,ts}"
+    ],
+    "json": {
+      "enabled": true
+    },
+    "html": {
+      "enabled": true
+    },
+    "usage": {
+      "enabled": true
+    },
+    "messages": {
+      "enabled": true
+    }
   }
 }
