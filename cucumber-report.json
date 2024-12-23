@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "duckduckgo.com;visiting-the-frontpage",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "visiting the frontpage",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 3,
+            "name": "I visit duckduckgo.com",
+            "match": {
+              "location": "cypress/e2e/google.js:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1663000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "duckduckgo.com",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "duckduckgo.com",
+    "tags": [],
+    "uri": "cypress\\e2e\\feature\\googletest.feature"
+  }
+]

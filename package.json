@@ -18,6 +18,9 @@
     "@badeball/cypress-cucumber-preprocessor": "^21.0.3"
   },
   "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "filterSpecs": true,
+    "omitFiltered": true,
     "stepDefinitions": [
       "cypress/e2e/**/*.{js,ts}",
       "cypress/e2e/*.{js,ts}",

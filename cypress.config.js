@@ -24,7 +24,7 @@ module.exports = defineConfig({
   defaultCommandTimeout: 6000,
 
   env: {
-    url: "https://rahulshettyacademy.com",
+    url: "http://www.automationpractice.pl/index.php",
   },
   reporter: 'cypress-mochawesome-reporter',
 
@@ -32,12 +32,14 @@ module.exports = defineConfig({
     runMode: 1,
 
   },
-  projectId: "nodpcq",
+  
+
 
 
   e2e: {
     setupNodeEvents,
-    specPattern: 'cypress/e2e/*.js'
+    specPattern: 'cypress/e2e/feature/*.feature'
 
   },
+  
 });
