@@ -45,9 +45,21 @@ Before(() => {
 
 
 
-Given("I visit google page", () => {
+Given("I visit application page", () => {
   const userBaseUrl = Cypress.env('url') 
   cy.visit(userBaseUrl);
-  console.log("Hello world!");
+  cy.get('.sf-menu > :nth-child(2) > .sf-with-ul').first().click();
+  cy.get('.product_list  .product-container img').first().click();
+  cy.get('#group_1').select('M').should('have.value', '2')
+  cy.get('.span_link').click();
+
+  cy.get('.fancybox-inner > img').should('have.attr','src','http://www.automationpractice.pl/img/p/8/8-thickbox_default.jpg')
+  cy.get("a[title='Close']").click();
+  cy.get('.sf-menu > :nth-child(2) > .sf-with-ul').first().click();
+  cy.get('img[src*="10-home_default.jpg"]').click();
+  cy.get('#group_1').select('M').should('have.value', '2')
+  cy.get('.color_pick[name="Pink"]').click();
+  cy.get("button[class='exclusive']").click();
+  cy.get("a[title='Proceed to checkout']").click();
 
 });
