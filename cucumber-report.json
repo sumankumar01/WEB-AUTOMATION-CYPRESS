@@ -4,34 +4,111 @@
     "elements": [
       {
         "description": "",
-        "id": "duckduckgo.com;visiting-the-frontpage",
+        "id": "add-to-cart-feature;add-dresses-feature",
         "keyword": "Scenario",
-        "line": 2,
-        "name": "visiting the frontpage",
+        "line": 4,
+        "name": "add dresses feature",
         "steps": [
           {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 13000000
+            }
+          },
+          {
             "arguments": [],
-            "keyword": "When ",
-            "line": 3,
-            "name": "I visit duckduckgo.com",
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I visit application page",
             "match": {
-              "location": "cypress/e2e/google.js:3"
+              "location": "cypress/e2e/addToCart.js:48"
             },
             "result": {
               "status": "passed",
-              "duration": 1663000000
+              "duration": 7447000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 50000000
             }
           }
         ],
-        "tags": [],
+        "tags": [
+          {
+            "name": "@Smoke",
+            "line": 3
+          }
+        ],
         "type": "scenario"
       }
     ],
-    "id": "duckduckgo.com",
+    "id": "add-to-cart-feature",
     "line": 1,
     "keyword": "Feature",
-    "name": "duckduckgo.com",
+    "name": "add to cart feature",
     "tags": [],
-    "uri": "cypress\\e2e\\feature\\googletest.feature"
+    "uri": "cypress\\e2e\\feature\\addToCart.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "add-to-cart-feature;buy-dresses-feature",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "buy dresses feature",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 13000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I visit application page and register to application with \"username@gmail.com\" and \"password\"",
+            "match": {
+              "location": "cypress/e2e/feature/buyDress.js:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6671000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 18000000
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Smoke",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "add-to-cart-feature",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "add to cart feature",
+    "tags": [],
+    "uri": "cypress\\e2e\\feature\\buyDress.feature"
   }
 ]
