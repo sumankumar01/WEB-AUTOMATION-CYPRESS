@@ -97,25 +97,15 @@ pipeline {
                echo 'dependencies installed'
            }
        }
-       
-       //This deletes any older xml results files present in the directory
-       stage('Stage 3 - Clearing old reports') {
-           steps {
-               sh "npm run report:pre"
-           }
-       }
+      
        
        stage('Stage 4 - Running cypress e2e Tests') {
-            //For recording tests on Cypress Cloud Dashboard, you need to set these environment variables
-            environment {
-                CYPRESS_RECORD_KEY = credentials('cypress-framework-record-key')
-                CYPRESS_PROJECT_ID = credentials('cypress-framework-project-id')
-            }
+         
 
             steps {
                 //sh "SET NO_COLOR=$NO_COLOR"    //You may want to do this if ASCII characters or colors are not properly formatted in your CI.
                 script {
-                    if (params.TEST_SPEC == "cypress/e2e/tests/*.cy.js") {
+                    if (params.TEST_SPEC == "cypress/e2e/*.js") {
                         echo "Running all test scripts with Browser: ${params.BROWSER}, TAG: ${params.TAG}, Environment: ${params.TEST_ENVIRONMENT}"
                         sh "npx cypress run --${params.BROWSER_MODE} --browser ${params.BROWSER} --env environmentName=${params.TEST_ENVIRONMENT},grepTags=${params.TAG} ${params.RECORD_TESTS}"
                     } else {
