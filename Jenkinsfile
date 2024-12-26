@@ -80,6 +80,15 @@ pipeline {
     //The stage directive goes in the stages section and should contain a steps section, an optional agent section, 
     //or other stage-specific directives. Practically speaking, all of the real work done by a Pipeline will be wrapped in one or more stage directives.
    stages {
+      stage("Fix the permission issue") {
+
+            agent any
+
+            steps {
+                sh "sudo chown root:jenkins /run/docker.sock"
+            }
+
+        }
        stage('Stage 1 - Checkout Code') {
         //The steps section defines a series of one or more steps to be executed in a given stage directive.
             steps {
