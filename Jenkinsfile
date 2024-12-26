@@ -105,6 +105,7 @@ pipeline {
             steps {
                 //sh "SET NO_COLOR=$NO_COLOR"    //You may want to do this if ASCII characters or colors are not properly formatted in your CI.
                 script {
+                    sh 'docker run -v $PWD:/e2e -w /e2e cypress/included:3.4.0'
                     if (params.TEST_SPEC == "cypress/e2e/*.js") {
                         echo "Running all test scripts with Browser: ${params.BROWSER}, TAG: ${params.TAG}, Environment: ${params.TEST_ENVIRONMENT}"
                         sh "npx cypress run --${params.BROWSER_MODE} --browser ${params.BROWSER} --env environmentName=${params.TEST_ENVIRONMENT},grepTags=${params.TAG} ${params.RECORD_TESTS}"
