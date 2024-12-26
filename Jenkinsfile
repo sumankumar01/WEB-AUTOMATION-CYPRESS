@@ -99,10 +99,17 @@ pipeline {
        stage('Stage 2 - Installing dependencies') {
            steps {
                sh 'npm i'
+               sh 'npm run cy:verify'
                echo 'dependencies installed'
            }
        }
-      
+       stage('start local server') {
+      steps {
+        // start local server in the background
+        // we will shut it down in "post" command block
+        sh 'nohup npm run start &'
+      }
+    }
        
        stage('Stage 4 - Running cypress e2e Tests') {
          
