@@ -2,7 +2,7 @@ pipeline {
    
      agent { 
        docker {
-        image 'cypress/base:22.11.0' 
+        image 'cypress/included:latest' 
          args '-e HOME=/tmp -e NPM_CONFIG_PREFIX=/tmp/.npm -e CYPRESS_CACHE_FOLDER=/tmp/.cache/Cypress --entrypoint \"\" ' 
          reuseNode true 
          } 
