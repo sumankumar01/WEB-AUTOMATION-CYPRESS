@@ -2,7 +2,7 @@ pipeline {
    
      agent { 
        docker {
-        image 'cypress/included:latest' 
+        image 'cypress/base:22.11.0' 
          args '-e HOME=/tmp -e NPM_CONFIG_PREFIX=/tmp/.npm -e CYPRESS_CACHE_FOLDER=/tmp/.cache/Cypress --entrypoint \"\" ' 
          reuseNode true 
          } 
@@ -98,6 +98,7 @@ pipeline {
         
        stage('Stage 2 - Installing dependencies') {
            steps {
+               sh 'npm ci'
                sh 'npm i'
                sh 'npm run cy:verify'
                echo 'dependencies installed'
