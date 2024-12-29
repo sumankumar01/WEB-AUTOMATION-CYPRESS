@@ -107,7 +107,7 @@ pipeline {
 
          stage('Stage 3 - Clearing old reports') {
            steps {
-               bat "npm run report:pre"
+               sh 'npm run report:pre'
            }
        }
        stage('start local server') {
