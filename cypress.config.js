@@ -9,11 +9,6 @@ const {
 
 async function setupNodeEvents(on, config) {
   await addCucumberPreprocessorPlugin(on, config);
- //cypress-mochawesome-reporter
-      require('cypress-mochawesome-reporter/plugin')(on);  
-
-      //cypress grep plugin config for tags
-      require('@cypress/grep/src/plugin')(config);
   on(
     "file:preprocessor",
     browserify(preprendTransformerToOptions(config, browserify.defaultOptions)),
