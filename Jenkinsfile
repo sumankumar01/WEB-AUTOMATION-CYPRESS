@@ -154,8 +154,8 @@ pipeline {
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
-                    reportDir: 'cypress/results/cypress-mochawesome-reporter',
-                    reportFiles: 'index.html',
+                    reportDir: '',
+                    reportFiles: 'cucumber-report.html',
                     reportName: 'Cypress Mochawesome Report',
                     reportTitles: 'Cypress Test Automation Framework',
                     useWrapperFileDirectly: true
