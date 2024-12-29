@@ -104,6 +104,12 @@ pipeline {
                echo 'dependencies installed'
            }
        }
+
+         stage('Stage 3 - Clearing old reports') {
+           steps {
+               bat "npm run report:pre"
+           }
+       }
        stage('start local server') {
       steps {
         // start local server in the background
