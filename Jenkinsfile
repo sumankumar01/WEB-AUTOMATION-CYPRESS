@@ -1,8 +1,7 @@
 pipeline {
    
-   //The agent section specifies where the entire Pipeline, or a specific stage, 
-   //will execute in the Jenkins environment depending on where the agent section is placed.
-     agent { docker {  
+     agent { 
+        docker {  
         image 'cypress/included:9.5.0' args '-e HOME=/tmp -e NPM_CONFIG_PREFIX=/tmp/.npm -e CYPRESS_CACHE_FOLDER=/tmp/.cache/Cypress --entrypoint \"\" ' reuseNode true 
          } 
       }
