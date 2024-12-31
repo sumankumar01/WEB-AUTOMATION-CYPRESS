@@ -144,11 +144,12 @@ pipeline {
         always {
             //Publish the HTML report using the HTML Publisher plugin
             echo 'Publishing the Extent Report'
+           sh "pwd"
             publishHTML([
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
-                    reportDir: '/',
+                    reportDir: '.',
                     reportFiles: 'cucumber-report.html',
                     reportName: 'Cypress Mochawesome Report',
                     reportTitles: 'Cypress Test Automation Framework',
