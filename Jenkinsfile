@@ -151,7 +151,7 @@ pipeline {
                     keepAll: true,
                     reportDir: '.',
                     reportFiles: 'cucumber-report.html',
-                    reportName: 'Cypress Mochawesome Report',
+                    reportName: 'CypressMochawesomeReport',
                     reportTitles: 'Cypress Test Automation Framework',
                     useWrapperFileDirectly: true
             ])
@@ -177,7 +177,7 @@ pipeline {
                 echo 'Sending Slack Notification'
                 slackSend channel: '#cypress-framework-jenkins',
                           color: COLOR_MAP[currentBuild.currentResult],
-                          message: "*${currentBuild.currentResult}*\n *Job*: ${env.JOB_NAME} , *Build*: ${env.BUILD_NUMBER}\n *Test Results*: \n\t Total: ${testResults.totalCount} Passed: ${testResults.passCount} Failed: ${testResults.failCount} Skipped: ${testResults.skipCount}\n *Test Run Configuration*:\n\t *Test Script(s)*: ${params.TEST_SPEC}\n\t *Browser*: ${params.BROWSER}  ${params.BROWSER_MODE}\n\t *Tags*: ${params.TAG}\n\t *Environment*: ${params.TEST_ENVIRONMENT}\n\t *Dashboard Recording*: ${params.RECORD_TESTS}\n *Test Report*: ${env.BUILD_URL}htmlreports/Cypress_20Mochawesome_20Report/ \n *More info*: ${env.BUILD_URL}"
+                          message: "*${currentBuild.currentResult}*\n *Job*: ${env.JOB_NAME} , *Build*: ${env.BUILD_NUMBER}\n *Test Results*: \n\t Total: ${testResults.totalCount} Passed: ${testResults.passCount} Failed: ${testResults.failCount} Skipped: ${testResults.skipCount}\n *Test Run Configuration*:\n\t *Test Script(s)*: ${params.TEST_SPEC}\n\t *Browser*: ${params.BROWSER}  ${params.BROWSER_MODE}\n\t *Tags*: ${params.TAG}\n\t *Environment*: ${params.TEST_ENVIRONMENT}\n\t *Dashboard Recording*: ${params.RECORD_TESTS}\n *Test Report*: ${env.BUILD_URL}htmlreports/CypressMochawesomeReport/ \n *More info*: ${env.BUILD_URL}"
      
             }
         }
